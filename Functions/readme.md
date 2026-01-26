@@ -24,7 +24,9 @@ An Arch-style wrapper for Windows Package Manager (`winget`).
 
 ### `func`
 A tool to install/uninstall functions
-* **Usage:** `func [flag] <function>`
+* **Usage:** `func (un/re)install <function>`
+  * `func update`
+  * `func add-repo <repo url(only github is supported)>`
 * **Flags:**
   * `install` - install
   * `uninstall` - uninstall
