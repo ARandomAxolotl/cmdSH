@@ -30,12 +30,12 @@ A tool to install/uninstall functions
 * **Flags:**
   * `install` - install
   * `uninstall` - uninstall
-  * `reinstall (--all) ` - reinstall/update (all)
+  * `reinstall` (--all) - reinstall/update (all)
   * `update` - update functions list
   * `add-repo` - add a repo
   * `remake-config` - overwrite existing config to the default one
   * `purge` : remove all configs
-  * `list (--installed) : list known/installed functions 
+  * `list` (--installed) - list known/installed functions 
 
 ---
 
