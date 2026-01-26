@@ -28,6 +28,9 @@ A tool to install/uninstall functions
 * **Flags:**
   * `install` - install
   * `uninstall` - uninstall
+  * `reinstall (--all) ` - reinstall/update (all)
+  * `update` - update functions list
+  * `add-repo` - add a repo
 
 ---
 
