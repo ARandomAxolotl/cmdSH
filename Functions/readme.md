@@ -22,6 +22,13 @@ An Arch-style wrapper for Windows Package Manager (`winget`).
   * `-Ss <pkg>` - Search.
   * `-R <pkg>` - Remove/Uninstall.
 
+### `func`
+A tool to install/uninstall functions
+* **Usage:** `func [flag] <function>`
+* **Flags:**
+  * `install` - install
+  * `uninstall` - uninstall
+
 ---
 
 ## 📂 File Operations
