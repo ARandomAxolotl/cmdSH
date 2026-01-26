@@ -25,7 +25,7 @@ An Arch-style wrapper for Windows Package Manager (`winget`).
 ### `func`
 A tool to install/uninstall functions
 * **Usage:** `func (un/re)install <function>`
-  * `func update/remake-config/purge`
+  * `func update/remake-config/purge/list`
   * `func add-repo <repo url(only github is supported)>`
 * **Flags:**
   * `install` - install
@@ -35,6 +35,7 @@ A tool to install/uninstall functions
   * `add-repo` - add a repo
   * `remake-config` - overwrite existing config to the default one
   * `purge` : remove all configs
+  * `list (--installed) : list known/installed functions 
 
 ---
 
