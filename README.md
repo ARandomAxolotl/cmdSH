@@ -15,6 +15,7 @@
 * **Modular Functions:** Automatically creates a `Functions` directory and adds it to the `%PATH%`, allowing you to drop in scripts and run them as commands.
 * **Flashfetch Integration:** Automatically runs `flashfetch` on startup if installed.
 * **Startup Script:** Generates and runs a `startup.cmd` file for persistent aliases or custom initialization.
+* **Func:** A function manager to install functions
 
 ## 📂 Directory Structure
 
@@ -26,4 +27,5 @@ Upon the first run, `cmdsh` will automatically generate the following ecosystem 
 ├── cmdsh.cmd       # The main shell script
 ├── csh.cmd         # A shorthand wrapper created automatically
 ├── startup.cmd     # Runs commands on shell launch (edit this!)
-└── Functions/      # Add your custom .cmd/.bat scripts here
+├── Functions/      # Add your custom .cmd/.bat scripts here
+└── .config/         # A directory to store config
