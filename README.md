@@ -1,6 +1,6 @@
 # cmdsh - Zsh-Style Wrapper for Windows CMD
 
-`cmdsh` is a lightweight Batch script designed to enhance the standard Windows Command Prompt. It provides a modern, two-line prompt aesthetic (similar to "Powerlevel10k" on Linux), visual error feedback, and an organized structure for custom functions.
+`cmdsh` is a lightweight Batch script designed to enhance the standard Windows Command Prompt. It provides a modern, two-line prompt aesthetic, visual error feedback, and an organized structure for custom functions.
 
 ## 🚀 Features
 
