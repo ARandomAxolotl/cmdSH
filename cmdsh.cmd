@@ -12,8 +12,7 @@ if "%~2"=="--i-want-to-create-config-here" (
     )
     
     if not exist "%~dp0startup.cmd" ( 
-        echo :: This script will launch on startup of cSH > "%~dp0startup.cmd" 
-    )
+        echo :: This script will launch on startup of cSH > "%~dp0startup.cmd" )
     if not exist "%~dp0.config" mkdir "%~dp0.config"
     
     if not exist "%~dp0.config\.config" (
@@ -21,9 +20,10 @@ if "%~2"=="--i-want-to-create-config-here" (
             echo enable_flashfetch_on_startup=true
             echo enable_start.cmd_on_startup=true
             echo use_functions=true
-            echo default_startup_place=default
+            echo startup_path=default
         ) > "%~dp0.config\.config"
     )
+    if not exist "%~dp0sandbox" ( mkdir sandbox )
 )
 
 :: Loading the config
@@ -37,11 +37,11 @@ if exist "%~dp0.config\.config" (
 if not "%~1"=="" ( 
     cd /d "%~1" 
 ) else (
-    if /i "%default_startup_place%" == "default" ( 
+    if /i "%startup_path%" == "default" ( 
         cd /d "%USERPROFILE%" 
     ) else (
-        if exist "%default_startup_place%" (
-            cd /d "%default_startup_place%" 
+        if exist "%startup_path%" (
+            cd /d "%startup_path%" 
         ) else ( 
             echo Path not found^, going to the default path^.
             echo Please check your config default path^.

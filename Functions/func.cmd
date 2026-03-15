@@ -35,8 +35,14 @@ if /i "!cmd!" == "search"         goto :search
 if /i "!cmd!" == "remake-config"  goto :remake
 if /i "!cmd!" == "purge"          goto :purge
 
+if /i "!cmd!" == "remove" goto :uninstall
+if /i "!cmd!" == "update-source" goto :update
+if /i "!cmd!" == "addrepo" goto :addrepo
+if /i "!cmd!" == "remake" goto :remake
+:: addional commands
+
 echo %ESC%[33mcSH Package Manager%ESC%[0m
-echo Usage: %~n0 [install ^| uninstall ^| reinstall ^| list ^| update ^| add-repo ^| search ^| purge]
+echo Usage: %~n0 [install ^| uninstall ^| list ^| update ^| add-repo ^| search ^| purge]
 goto :end
 
 :: --- Logic Blocks ---
@@ -70,17 +76,36 @@ if %errorlevel% == 0 (
 goto :end
 
 :search
-if "!target!" == "" (
+if "!target!"=="" (
     echo %ESC%[31m[Error]%ESC%[0m Specify a keyword.
     goto :end
 )
-echo %ESC%[36mSearching for "!target!"...%ESC%[0m
+
+echo %ESC%[36mSearching repositories for functions containing "!target!"...%ESC%[0m
+set "matchCount=0"
+
+:: Loop through all cache files in the save directory
 for %%F in ("!saveDir!\*.txt") do (
-    if exist "%%F" (
-        for /f "usebackq tokens=*" %%A in (`findstr /i "!target!" "%%F" 2^>nul`) do (
-            echo  - %%A %ESC%[90m(In %%~nxF)%ESC%[0m
+    :: Check if the file contains the keyword before doing anything
+    findstr /i /c:"!target!" "%%F" >nul
+    if !errorlevel! equ 0 (
+        echo(
+        echo %ESC%[33m[Repo: %%~nF]%ESC%[0m
+        
+        :: Read lines that match the keyword
+        for /f "usebackq tokens=*" %%A in (`findstr /i /c:"!target!" "%%F"`) do (
+            echo    - %%A
+            set /a matchCount+=1
         )
     )
+)
+
+echo(
+if !matchCount! equ 0 (
+    echo %ESC%[31mNo matches found.%ESC%[0m
+    echo %ESC%[90mTip: If you haven't recently, run 'update' to populate the cache.%ESC%[0m
+) else (
+    echo %ESC%[32mSearch complete. Found !matchCount! matching function(s).%ESC%[0m
 )
 goto :end
 
