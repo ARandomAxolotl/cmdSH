@@ -26,6 +26,8 @@ if "%~2"=="--i-want-to-create-config-here" (
     if not exist "%~dp0sandbox" ( mkdir sandbox )
 )
 
+if "%~3" == "--installer" ( exit )
+
 :: Loading the config
 if exist "%~dp0.config\.config" (
     :: Using the full path ensures it loads even if the 'current directory' changes
