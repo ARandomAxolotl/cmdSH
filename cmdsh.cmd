@@ -26,7 +26,7 @@ if "%~2"=="--i-want-to-create-config-here" (
     if not exist "%~dp0sandbox" ( mkdir sandbox )
 )
 
-if "%~3" == "--installer" ( exit )
+if "%~3" == "--installer" ( goto :eof )
 
 :: Loading the config
 if exist "%~dp0.config\.config" (
