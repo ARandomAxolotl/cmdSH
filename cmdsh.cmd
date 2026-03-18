@@ -91,3 +91,5 @@ title cmdSH - %cd%
 if %errorlevel% equ 0 (set "symCol=%G%") else (set "symCol=%R%")
 
 goto main_loop
+
+echo This piece of code will never run.
