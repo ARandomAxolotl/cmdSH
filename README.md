@@ -28,4 +28,5 @@ Upon the first run, `cmdsh` will automatically generate the following ecosystem 
 ├── csh.cmd         # A shorthand wrapper created automatically
 ├── startup.cmd     # Runs commands on shell launch (edit this!)
 ├── Functions/      # Add your custom .cmd/.bat scripts here
-└── .config/         # A directory to store config
+├── .config/        # A directory to store config
+└── sandbox/        # A folder to store "sandboxed" scmd
